@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: ordini
+      - name: piani
+      - name: metodi
+      - name: coupon
+      - name: abbonamenti
+      - name: transazioni
+      - name: rinnovi
