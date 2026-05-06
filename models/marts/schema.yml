@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_piani
+    columns:
+      - name: piano_key
+        tests:
+          - unique
+          - not_null
+      - name: piano_nome
+        tests:
+          - not_null
+
+  - name: dim_metodi
+    columns:
+      - name: metodo_key
+        tests:
+          - unique
+          - not_null
+      - name: metodo_nome
+        tests:
+          - not_null
+
+  - name: dim_coupon
+    columns:
+      - name: coupon_key
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_transazioni
+    columns:
+      - name: transazione_id
+        tests:
+          - unique
+          - not_null
+      - name: importo_lordo
+        tests:
+          - not_null
+      - name: piano_key
+        tests:
+          - not_null
+      - name: metodo_key
+        tests:
+          - not_null
+
+  - name: flat_ordini
+    columns:
+      - name: transazione_id
+        tests:
+          - unique
+          - not_null
+      - name: piano_nome
+        tests:
+          - not_null
+      - name: metodo_nome
+        tests:
+          - not_null
+      - name: importo_lordo
+        tests:
+          - not_null
